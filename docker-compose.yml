@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   db:
-    container_name: postgres-2
+    container_name: postgres-airflow
     image: postgres:14-alpine
     ports:
       - "5432:5432"
@@ -11,9 +11,9 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     environment:
-      - POSTGRES_USER=angelova
-      - POSTGRES_PASSWORD=angelova
-      - POSTGRES_DB=tamriel_db
+      - POSTGRES_USER=airflow
+      - POSTGRES_PASSWORD=airflow
+      - POSTGRES_DB=airflow
 
 volumes:
   postgres_data:
